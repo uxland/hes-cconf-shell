@@ -1,12 +1,24 @@
 {
-  "name": "hes-settings-center-shell",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@uxland/hes-settings-center-shell",
+  "version": "0.0.1",
+  "description": "HES Settings Center Shell",
+  "author": "UXLand <dev@uxland.es>",
+  "homepage": "https://github.com/uxland/hes-settings-center-shell/#readme",
+  "license": "UNLICENSED",
   "type": "module",
+  "main": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
+  "files": ["dist", "src"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uxland/hes-settings-center-shell.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "lit": "^3.1.4",
@@ -19,5 +31,9 @@
     "vite-plugin-dts": "^3.9.1",
     "ts-node": "^10.9.1",
     "vite": "^5.3.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
