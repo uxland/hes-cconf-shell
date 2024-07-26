@@ -1,5 +1,6 @@
 //import "@salut/design-system-salut";
 //import "@salut/design-system-salut/css/main.css";
+import "../../dss.css";
 import { html } from "lit";
 import { HesSettingsCenterShell } from "./shell";
 
@@ -10,6 +11,7 @@ export const template = (props: HesSettingsCenterShell) => html`
       <div class="header-logo">
         <img src="/images/Salut_Logotip.svg" alt="logo" />
       </div>
+      <div class="header-title">HES | Centre de configuració</div>
       <content-switcher id="header-region-container"></content-switcher>
     </div>
     <div class="header__right">
@@ -29,7 +31,8 @@ export const template = (props: HesSettingsCenterShell) => html`
   <div class="footer">
     <div class="footer-logo">
       <img src="/images/Gencat_Logotip.svg" alt="logo" />
-      
     </div>
+    <span class="divider"></span>
+    <div class="footer-title">Historial Electrònic de Salut (HES)</div>
   </div>
 </div>`;

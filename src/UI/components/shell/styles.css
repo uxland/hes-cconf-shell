@@ -29,11 +29,17 @@
 .header__left {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 24px;
 }
 
 .header-logo {
   align-self: center;
+}
+
+.header-title{
+  font-weight: 700;
+  font-size: 16px;
 }
 
 #actions-toolbar-region-container {
@@ -52,7 +58,7 @@
   flex-direction: column;
   justify-content: space-between;
   background: var(--color-primary-800);
-  width: 15%;
+  width: 55px;
   height: 100%;
   color: white;
 }
@@ -77,10 +83,24 @@
 
 .footer {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
   height: 50px;
-  padding: 0 16px;
+  padding: 4px 16px;
 }
 
 .footer-logo {
   align-self: center;
+}
+
+.divider{
+  background: rgb(190, 190, 190);
+  width: 1px;
+  height: 25px;
+}
+
+.footer-title{
+  font-size: 12px;
+  font-weight: 300;
 }
