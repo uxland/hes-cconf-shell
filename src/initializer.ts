@@ -6,3 +6,4 @@ export const initializeShell = async (element: HTMLElement) => {
   const shell = new HesSettingsCenterShell();
   element.appendChild(shell as any);
 };
+

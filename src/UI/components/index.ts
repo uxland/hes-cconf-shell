@@ -1,2 +1,2 @@
-import "./shell/shell";
-import "../shared-components";
+import "./content-switcher/content-switcher";
+import "./dss-container/dss-container";
