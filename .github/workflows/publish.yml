@@ -35,6 +35,6 @@ jobs:
       - name: Check git status
         run: git status
       - name: Publish
-        run: pnpm publish @uxland/hes-settings-center-shell
+        run: pnpm publish
 
 
