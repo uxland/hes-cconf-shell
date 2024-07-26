@@ -1,6 +1,6 @@
 import { css, html, LitElement, render, unsafeCSS } from "lit";
 import { customElement } from "lit/decorators.js";
-import styles from "./styles.scss?inline";
+import styles from "./styles.css?inline";
 
 @customElement("dss-container")
 export class DssContainer extends LitElement {
@@ -23,6 +23,7 @@ export class DssContainer extends LitElement {
     //   }
     // });
 
+    // @ts-ignore
     render(assignedNodes[0], this.shadowRoot.querySelector("#container"));
   }
 

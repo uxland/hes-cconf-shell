@@ -28,7 +28,7 @@ export const hesSettingsCenterApiFactory: ApiFactory<HesSettingsCenterApi> = (
   return {
     pluginInfo: pluginInfo,
     regionManager: createRegionManagerProxy(pluginInfo, regionManager),
-    createLocaleManager: null
+    createLocaleManager: null as any
   };
 };
 

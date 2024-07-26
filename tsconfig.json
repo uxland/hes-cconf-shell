@@ -16,9 +16,6 @@
     "isolatedModules": true,
     "noEmit": true,
     "strictNullChecks": true,
-    "noUncheckedIndexedAccess": true,
-    "paths": {
-      "@uxland/primary-shell": ["primary/shell/src"]
-    }
+    "noUncheckedIndexedAccess": true
   }
 }
