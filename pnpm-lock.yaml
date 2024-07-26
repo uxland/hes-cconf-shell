@@ -5,6 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@uxland/harmonix':
+    specifier: ^1.0.0
+    version: 1.0.18
+  '@uxland/localization':
+    specifier: ^1.0.3
+    version: 1.0.6
+  '@uxland/regions':
+    specifier: ^1.0.0
+    version: 1.0.0
   lit:
     specifier: ^3.1.4
     version: 3.1.4
@@ -226,8 +235,26 @@ packages:
     dev: true
     optional: true
 
+  /@formatjs/intl-unified-numberformat@3.3.7:
+    resolution: {integrity: sha512-KnWgLRHzCAgT9eyt3OS34RHoyD7dPDYhRcuKn+/6Kv2knDF8Im43J6vlSW6Hm1w63fNq3ZIT1cFk7RuVO3Psag==}
+    deprecated: We have renamed the package to @formatjs/intl-numberformat
+    dependencies:
+      '@formatjs/intl-utils': 2.3.0
+    dev: false
+
+  /@formatjs/intl-utils@2.3.0:
+    resolution: {integrity: sha512-KWk80UPIzPmUg+P0rKh6TqspRw0G6eux1PuJr+zz47ftMaZ9QDwbGzHZbtzWkl5hgayM/qrKRutllRC7D/vVXQ==}
+    deprecated: the package is rather renamed to @formatjs/ecma-abstract with some changes in functionality (primarily selectUnit is removed and we don't plan to make any further changes to this package
+    dev: false
+
   /@lit-labs/ssr-dom-shim@1.2.0:
     resolution: {integrity: sha512-yWJKmpGE6lUURKAaIltoPIE/wrbY3TEkqQt+X0m+7fQNnAv0keydnYvbiJFP1PnMhizmIWRWOG5KLhYyc/xl+g==}
+    dev: false
+
+  /@lit/reactive-element@1.6.3:
+    resolution: {integrity: sha512-QuTgnG52Poic7uM1AN5yJ09QMe0O28e10XzSvWDz02TJiiKee4stsiownEIadWm8nYzyDAyT+gKzUoZmiWQtsQ==}
+    dependencies:
+      '@lit-labs/ssr-dom-shim': 1.2.0
     dev: false
 
   /@lit/reactive-element@2.0.4:
@@ -372,6 +399,62 @@ packages:
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
     dev: false
 
+  /@uxland/browser-utilities@1.0.2:
+    resolution: {integrity: sha512-PDbFkhi5HlABqM/eV7YyDIlpY89ozBxeBDBEhWA59mx2iFlfaj3cGegyoimk/cEV1E5UIvqKMKHpEqovLBiWjA==}
+    dev: false
+
+  /@uxland/event-aggregator@1.0.1:
+    resolution: {integrity: sha512-SBMgnddxeqA5M4kVB66ouxiUOPhFwCEevhoQ63v4bt01ylmNBBAztZCoEiHyvLF+aKJskZV+to6Vo+5ri9/AxA==}
+    dependencies:
+      ramda: 0.27.2
+    dev: false
+
+  /@uxland/harmonix@1.0.18:
+    resolution: {integrity: sha512-VeXI6ebrG3vxH6H6JXMkFGWS7bvY7lpu80daj6fxaPo9fbLyWc4O5TG7EDjnni3jPOzJtnhsXrrfFthOEE5tug==}
+    dependencies:
+      '@uxland/regions': 1.0.0
+      lit: 3.1.4
+    dev: false
+
+  /@uxland/lit-utilities@1.0.0:
+    resolution: {integrity: sha512-zypSEO2tivQ8+OG3TTq5X/8BU1b09POnjS5S1K5PiWy4jnJzD9JwGEF3vX4btRMafBzIpzI4FiRbLiwR2lRTYA==}
+    dependencies:
+      '@uxland/utilities': 1.0.5
+      lit: 2.8.0
+      ramda: 0.27.2
+    dev: false
+
+  /@uxland/localization@1.0.6:
+    resolution: {integrity: sha512-9JnAwFFPd92ImM1d5r64Yk+Roz9x4cT9yhRoCONSeo1JeNdgM4I3wyepCvr2cK+dcEq8v8wB9AB5hyP/EOnlBA==}
+    dependencies:
+      '@uxland/event-aggregator': 1.0.1
+      '@uxland/utilities': 1.0.5
+      intl-messageformat: 7.8.4
+      ramda: 0.27.2
+    dev: false
+
+  /@uxland/ramda-extensions@1.0.3:
+    resolution: {integrity: sha512-TG9Yi1mZoV8oSYZj+zBeIGTOFdY/rxHPQeM0rbB1uI9u4DeKdAHZfU4XthpKs41bwn31gYy9MQ4MBQwPOqdKvg==}
+    dependencies:
+      ramda: 0.27.2
+    dev: false
+
+  /@uxland/regions@1.0.0:
+    resolution: {integrity: sha512-Bgy+u3mVuPl4HT7SRP1EV0FBxNQSDdNvL+9t26C+tNzREiqjwtMGSuAGHyMo7xbBn5X7wLmIfI6MI+uJAsy9Cw==}
+    dependencies:
+      '@uxland/browser-utilities': 1.0.2
+      '@uxland/lit-utilities': 1.0.0
+      '@uxland/utilities': 1.0.5
+      lit: 2.8.0
+      ramda: 0.27.2
+    dev: false
+
+  /@uxland/utilities@1.0.5:
+    resolution: {integrity: sha512-zzvcIGghD7XsRGevff0WZQyatC1s3c6kNwMDdoEXhWBW5TQipkAWRfjOXreGJvEyFlIUMye+gaiNocC1wuWxmQ==}
+    dependencies:
+      '@uxland/ramda-extensions': 1.0.3
+    dev: false
+
   /esbuild@0.21.5:
     resolution: {integrity: sha512-mg3OPMV4hXywwpoDxu3Qda5xCKQi+vCTZq8S9J/EpkhB2HzKXq4SNFZE3+NK93JYxc8VMSep+lOUSC/RVKaBqw==}
     engines: {node: '>=12'}
@@ -411,6 +494,32 @@ packages:
     dev: true
     optional: true
 
+  /intl-format-cache@4.3.1:
+    resolution: {integrity: sha512-OEUYNA7D06agqPOYhbTkl0T8HA3QKSuwWh1HiClEnpd9vw7N+3XsQt5iZ0GUEchp5CW1fQk/tary+NsbF3yQ1Q==}
+    dev: false
+
+  /intl-messageformat-parser@3.6.4:
+    resolution: {integrity: sha512-RgPGwue0mJtoX2Ax8EmMzJzttxjnva7gx0Q7mKJ4oALrTZvtmCeAw5Msz2PcjW4dtCh/h7vN/8GJCxZO1uv+OA==}
+    deprecated: We've written a new parser that's 6x faster and is backwards compatible. Please use @formatjs/icu-messageformat-parser
+    dependencies:
+      '@formatjs/intl-unified-numberformat': 3.3.7
+    dev: false
+
+  /intl-messageformat@7.8.4:
+    resolution: {integrity: sha512-yS0cLESCKCYjseCOGXuV4pxJm/buTfyCJ1nzQjryHmSehlptbZbn9fnlk1I9peLopZGGbjj46yHHiTAEZ1qOTA==}
+    dependencies:
+      intl-format-cache: 4.3.1
+      intl-messageformat-parser: 3.6.4
+    dev: false
+
+  /lit-element@3.3.3:
+    resolution: {integrity: sha512-XbeRxmTHubXENkV4h8RIPyr8lXc+Ff28rkcQzw3G6up2xg5E8Zu1IgOWIwBLEQsu3cOVFqdYwiVi0hv0SlpqUA==}
+    dependencies:
+      '@lit-labs/ssr-dom-shim': 1.2.0
+      '@lit/reactive-element': 1.6.3
+      lit-html: 2.8.0
+    dev: false
+
   /lit-element@4.0.6:
     resolution: {integrity: sha512-U4sdJ3CSQip7sLGZ/uJskO5hGiqtlpxndsLr6mt3IQIjheg93UKYeGQjWMRql1s/cXNOaRrCzC2FQwjIwSUqkg==}
     dependencies:
@@ -419,10 +528,24 @@ packages:
       lit-html: 3.1.4
     dev: false
 
+  /lit-html@2.8.0:
+    resolution: {integrity: sha512-o9t+MQM3P4y7M7yNzqAyjp7z+mQGa4NS4CxiyLqFPyFWyc4O+nodLrkrxSaCTrla6M5YOLaT3RpbbqjszB5g3Q==}
+    dependencies:
+      '@types/trusted-types': 2.0.7
+    dev: false
+
   /lit-html@3.1.4:
     resolution: {integrity: sha512-yKKO2uVv7zYFHlWMfZmqc+4hkmSbFp8jgjdZY9vvR9jr4J8fH6FUMXhr+ljfELgmjpvlF7Z1SJ5n5/Jeqtc9YA==}
     dependencies:
       '@types/trusted-types': 2.0.7
+    dev: false
+
+  /lit@2.8.0:
+    resolution: {integrity: sha512-4Sc3OFX9QHOJaHbmTMk28SYgVxLN3ePDjg7hofEft2zWlehFL3LiAuapWc4U/kYwMYJSh2hTCPZ6/LIC7ii0MA==}
+    dependencies:
+      '@lit/reactive-element': 1.6.3
+      lit-element: 3.3.3
+      lit-html: 2.8.0
     dev: false
 
   /lit@3.1.4:
@@ -451,6 +574,10 @@ packages:
       picocolors: 1.0.1
       source-map-js: 1.2.0
     dev: true
+
+  /ramda@0.27.2:
+    resolution: {integrity: sha512-SbiLPU40JuJniHexQSAgad32hfwd+DRUdwF2PlVuI5RZD0/vahUco7R8vD86J/tcEKKF9vZrUVwgtmGCqlCKyA==}
+    dev: false
 
   /rollup@4.19.0:
     resolution: {integrity: sha512-5r7EYSQIowHsK4eTZ0Y81qpZuJz+MUuYeqmmYmRMl1nwhdmbiYqt5jwzf6u7wyOzJgYqtCRMtVRKOtHANBz7rA==}

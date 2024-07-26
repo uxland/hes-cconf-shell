@@ -1,0 +1,86 @@
+:host {
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  height: 60px;
+  background-color: white;
+  color: black;
+  z-index: 1;
+  box-shadow:
+    rgba(0, 0, 0, 0.12) 4px -1px 3px,
+    rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.header__left {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.header-logo {
+  align-self: center;
+}
+
+#actions-toolbar-region-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-container {
+  min-height: 1px;
+  height: 100%;
+  display: flex;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--color-primary-800);
+  width: 15%;
+  height: 100%;
+  color: white;
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  width: 85%;
+}
+
+#main-region-container {
+  min-height: 1px;
+  height: 100%;
+  display: flex;
+  flex: 1;
+}
+
+#floating-region-container {
+  position: fixed;
+  z-index: 200;
+}
+
+.footer {
+  display: flex;
+  height: 50px;
+  padding: 0 16px;
+}
+
+.footer-logo {
+  align-self: center;
+}
