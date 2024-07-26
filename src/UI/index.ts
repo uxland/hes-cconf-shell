@@ -1,2 +1,2 @@
-export * from "./components";
-export * from "./shared-components";
+import "../components/content-switcher/content-switcher";
+import "../components/dss-container/dss-container";
