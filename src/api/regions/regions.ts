@@ -1,4 +1,4 @@
 export const shellRegions = {
-  headerRight: "header-actions-region",
+  headerRight: "header-right-region",
   pluginMain: "plugin-main-region",
 };

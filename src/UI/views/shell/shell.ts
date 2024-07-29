@@ -33,7 +33,7 @@ export class HesCConfShell extends HesCConfRegionHost(LitElement) {
 
   _selectSection(sectionId: string) {
     this.selectedView = mainViews.section;
-    this.selectedSection = this.configurationSections?.find((c) => c.id === sectionId);
+    this.selectedSection = this.configurationSections?.find((c) => c.id === sectionId) as any;
   }
 
   _backToDashboard() {
