@@ -24,7 +24,7 @@ class RegionManagerProxy implements HesCConfRegionManager {
   registerView(regionName: string, view: HarmonixViewDefinition): Promise<void> {
     this.regionManager.registerViewWithRegion(
       regionName,
-      `${this.pluginInfo.pluginId}::${view.id}`,
+      view.id,
       view,
     );
     return Promise.resolve();
@@ -37,7 +37,7 @@ class RegionManagerProxy implements HesCConfRegionManager {
    * @return {Promise<void>} A promise that resolves when the view is successfully removed.
    */
   removeView(regionName: string, viewId: string): Promise<void> {
-    this.regionManager.getRegion(regionName).removeView(`${this.pluginInfo.pluginId}::${viewId}`);
+    this.regionManager.getRegion(regionName).removeView(viewId);
     return Promise.resolve();
   }
   /**
@@ -48,7 +48,7 @@ class RegionManagerProxy implements HesCConfRegionManager {
    * @return {Promise<void>} A promise that resolves when the view is successfully activated.
    */
   activateView(regionName: string, viewId: string): Promise<void> {
-    this.regionManager.getRegion(regionName).activate(`${this.pluginInfo.pluginId}::${viewId}`);
+    this.regionManager.getRegion(regionName).activate(viewId);
     return Promise.resolve();
   }
   /**
@@ -59,7 +59,7 @@ class RegionManagerProxy implements HesCConfRegionManager {
    * @return {Promise<void>} A promise that resolves when the view is successfully deactivated.
    */
   deactivateView(regionName: string, viewId: string): Promise<void> {
-    this.regionManager.getRegion(regionName).deactivate(`${this.pluginInfo.pluginId}::${viewId}`);
+    this.regionManager.getRegion(regionName).deactivate(viewId);
     return Promise.resolve();
   }
   /**
@@ -80,7 +80,7 @@ class RegionManagerProxy implements HesCConfRegionManager {
    */
   containsView(regionName: string, viewId: string) {
     const region = this.regionManager.getRegion(regionName);
-    return Promise.resolve(region?.containsView(`${this.pluginInfo.pluginId}::${viewId}`));
+    return Promise.resolve(region?.containsView(viewId));
   }
   /**
    * Checks if a view with the given ID is active in a specific region.
@@ -91,13 +91,13 @@ class RegionManagerProxy implements HesCConfRegionManager {
    */
   isViewActive(regionName: string, viewId: string) {
     const region = this.regionManager.getRegion(regionName);
-    return Promise.resolve(region?.isViewActive(`${this.pluginInfo.pluginId}::${viewId}`));
+    return Promise.resolve(region?.isViewActive(viewId));
   }
 
   registerMainView(view: HarmonixViewDefinition): Promise<void> {
     this.regionManager.registerViewWithRegion(
       shellRegions.pluginMain,
-      `${this.pluginInfo.pluginId}::${view.id}`,
+      view.id,
       view,
     );
     return Promise.resolve();
@@ -106,14 +106,14 @@ class RegionManagerProxy implements HesCConfRegionManager {
   activateMainView(viewId: string): Promise<void> {
     this.regionManager
       .getRegion(shellRegions.pluginMain)
-      .activate(`${this.pluginInfo.pluginId}::${viewId}`);
+      .activate(viewId);
     return Promise.resolve();
   }
 
   deactivateMainView(viewId: string): Promise<void> {
     this.regionManager
       .getRegion(shellRegions.pluginMain)
-      .deactivate(`${this.pluginInfo.pluginId}::${viewId}`);
+      .deactivate(viewId);
     return Promise.resolve();
   }
 }

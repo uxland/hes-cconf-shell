@@ -13,14 +13,14 @@ export interface HesCConfApi extends HarmonixApi {
   regionManager: HesCConfRegionManager;
 }
 
-const regionManager: IRegionManager = createRegionManager("hes-settings-center");
+const regionManager: IRegionManager = createRegionManager("hes-cc-conf");
 export const HesCConfRegionHost: any = createRegionHost(regionManager as any);
 
 /**
- * Factory function that creates a Hes Settings Center API instance.
+ * Factory function that creates a Hes CConf API instance.
  *
  * @param {PluginInfo} pluginInfo - Information about the plugin
- * @return {HesCConfApi} The created Hes Settings Center API instance
+ * @return {HesCConfApi} The created Hes CConf API instance
  */
 export const hesCConfApiFactory: ApiFactory<HesCConfApi> = (
   pluginInfo: PluginInfo,
