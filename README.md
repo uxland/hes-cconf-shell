@@ -1,2 +1,2 @@
-# hes-settings-center-shell
+# hes-cconf-shell
 HES Settings Center Shell

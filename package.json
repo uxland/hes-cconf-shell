@@ -1,9 +1,9 @@
 {
-  "name": "@uxland/hes-settings-center-shell",
+  "name": "@uxland/hes-cconf-shell",
   "version": "0.0.1",
   "description": "HES Settings Center Shell",
   "author": "UXLand <dev@uxland.es>",
-  "homepage": "https://github.com/uxland/hes-settings-center-shell/#readme",
+  "homepage": "https://github.com/uxland/hes-cconf-shell/#readme",
   "license": "UNLICENSED",
   "type": "module",
   "main": "src/index.ts",
@@ -12,7 +12,7 @@
   "files": ["dist", "src"],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uxland/hes-settings-center-shell.git"
+    "url": "git+https://github.com/uxland/hes-cconf-shell.git"
   },
   "scripts": {
     "dev": "vite",

@@ -42,7 +42,7 @@
   font-size: 16px;
 }
 
-#actions-toolbar-region-container {
+#header-right-region-container {
   display: flex;
   flex-direction: row;
 }
@@ -66,7 +66,7 @@
 .content {
   display: flex;
   height: 100%;
-  width: 85%;
+  width: 100%;
 }
 
 #main-region-container {
@@ -74,11 +74,6 @@
   height: 100%;
   display: flex;
   flex: 1;
-}
-
-#floating-region-container {
-  position: fixed;
-  z-index: 200;
 }
 
 .footer {

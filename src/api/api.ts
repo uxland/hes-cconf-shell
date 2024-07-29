@@ -6,25 +6,25 @@ import {
   createRegionHost,
   createRegionManager,
 } from "@uxland/harmonix";
-import { HesSettingsCenterRegionManager, createRegionManagerProxy } from "./regions/region-manager";
-import { hesSettingsCenterShellId } from "../constants";
+import { HesCConfRegionManager as HesCConfRegionManager, createRegionManagerProxy } from "./regions/region-manager";
+import { HesCConfShellId } from "../constants";
 
-export interface HesSettingsCenterApi extends HarmonixApi {
-  regionManager: HesSettingsCenterRegionManager;
+export interface HesCConfApi extends HarmonixApi {
+  regionManager: HesCConfRegionManager;
 }
 
 const regionManager: IRegionManager = createRegionManager("hes-settings-center");
-export const HesSettingsCenterRegionHost: any = createRegionHost(regionManager as any);
+export const HesCConfRegionHost: any = createRegionHost(regionManager as any);
 
 /**
  * Factory function that creates a Hes Settings Center API instance.
  *
  * @param {PluginInfo} pluginInfo - Information about the plugin
- * @return {HesSettingsCenterApi} The created Hes Settings Center API instance
+ * @return {HesCConfApi} The created Hes Settings Center API instance
  */
-export const hesSettingsCenterApiFactory: ApiFactory<HesSettingsCenterApi> = (
+export const hesCConfApiFactory: ApiFactory<HesCConfApi> = (
   pluginInfo: PluginInfo,
-): HesSettingsCenterApi => {
+): HesCConfApi => {
   return {
     pluginInfo: pluginInfo,
     regionManager: createRegionManagerProxy(pluginInfo, regionManager),
@@ -32,4 +32,4 @@ export const hesSettingsCenterApiFactory: ApiFactory<HesSettingsCenterApi> = (
   };
 };
 
-export const shellApi = hesSettingsCenterApiFactory({ pluginId: hesSettingsCenterShellId }) as HesSettingsCenterApi;
+export const shellApi = hesCConfApiFactory({ pluginId: HesCConfShellId }) as HesCConfApi;
