@@ -4,10 +4,9 @@ import { IRegion } from "@uxland/regions";
 import { shellRegions } from "./regions";
 
 export interface HesCConfRegionManager extends HarmonixRegionManager {
-  registerMenu(view: HarmonixViewDefinition): Promise<void>;
-  registerQuickAction(view: HarmonixViewDefinition): Promise<void>;
-  registerMainView(view: HarmonixViewDefinition, title: string): Promise<void>;
+  registerMainView(view: HarmonixViewDefinition): Promise<void>;
   activateMainView(viewId: string): Promise<void>;
+  deactivateMainView(viewId: string): Promise<void>;
 }
 
 class RegionManagerProxy implements HesCConfRegionManager {
@@ -95,51 +94,29 @@ class RegionManagerProxy implements HesCConfRegionManager {
     return Promise.resolve(region?.isViewActive(`${this.pluginInfo.pluginId}::${viewId}`));
   }
 
-  registerMenu(view: HarmonixViewDefinition): Promise<void> {
+  registerMainView(view: HarmonixViewDefinition): Promise<void> {
     this.regionManager.registerViewWithRegion(
-      shellRegions.menu,
+      shellRegions.pluginMain,
       `${this.pluginInfo.pluginId}::${view.id}`,
       view,
     );
     return Promise.resolve();
   }
-  registerQuickAction(view: HarmonixViewDefinition): Promise<void> {
-    this.regionManager.registerViewWithRegion(
-      shellRegions.quickActions,
-      `${this.pluginInfo.pluginId}::${view.id}`,
-      view,
-    );
-    return Promise.resolve();
-  }
-  registerMainView(view: HarmonixViewDefinition, title: string): Promise<void> {
-    this.regionManager.registerViewWithRegion(
-      shellRegions.main,
-      `${this.pluginInfo.pluginId}::${view.id}`,
-      view,
-    );
-    /* const titleView = createTitleView(view.id, title);
-    this.regionManager.registerViewWithRegion(
-      shellRegions.header,
-      `${this.pluginInfo.pluginId}::${view.id}`,
-      titleView,
-    ); */
-    return Promise.resolve();
-  }
+
   activateMainView(viewId: string): Promise<void> {
     this.regionManager
-      .getRegion(shellRegions.main)
+      .getRegion(shellRegions.pluginMain)
       .activate(`${this.pluginInfo.pluginId}::${viewId}`);
+    return Promise.resolve();
+  }
+
+  deactivateMainView(viewId: string): Promise<void> {
     this.regionManager
-      .getRegion(shellRegions.header)
-      .activate(`${this.pluginInfo.pluginId}::${viewId}`);
+      .getRegion(shellRegions.pluginMain)
+      .deactivate(`${this.pluginInfo.pluginId}::${viewId}`);
     return Promise.resolve();
   }
 }
-
-/* const createTitleView = (id: string, title: string): HarmonixViewDefinition => ({
-  id: id,
-  factory: () => Promise.resolve(new TitleView(title)),
-}); */
 
 /**
  * Creates a proxy for the region manager with the given plugin info and region manager instance.
