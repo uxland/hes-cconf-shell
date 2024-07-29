@@ -7,13 +7,15 @@ import { mainViews } from "../../../constants";
 import '../dashboard/dashboard';
 import '../section/section';
 import '../../components/content-switcher/content-switcher';
+import salutLogo from "../../images/Salut_Logotip.svg";
+import gencatLogo from "../../images/Gencat_Logotip.svg";
 
 export const template = (props: HesCConfShell) => html`
 <div class="container">
    <div class="header">
     <div class="header__left">
       <div class="header-logo">
-        <img src="/images/Salut_Logotip.svg" alt="logo" />
+        <img src=${salutLogo} alt="logo" />
       </div>
       <div class="header-title">HES | Centre de configuració</div>
     </div>
@@ -31,7 +33,7 @@ export const template = (props: HesCConfShell) => html`
   </div>
   <div class="footer">
     <div class="footer-logo">
-      <img src="/images/Gencat_Logotip.svg" alt="logo" />
+      <img src="${gencatLogo}" alt="logo" />
     </div>
     <span class="divider"></span>
     <div class="footer-title">Historial Electrònic de Salut (HES)</div>
