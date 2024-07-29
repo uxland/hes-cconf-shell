@@ -1,9 +1,9 @@
 import { bootstrapPlugins as pluginBootstrapper } from "@uxland/harmonix";
 import type { PluginDefinition, Plugin as PluginType } from "@uxland/harmonix";
 export type { PluginDefinition, PluginInfo } from "@uxland/harmonix";
-import { HesSettingsCenterApi, hesSettingsCenterApiFactory } from "./api";
+import { HesCConfApi, hesCConfApiFactory } from "./api";
 
 export const bootstrapPlugins = (plugins: PluginDefinition[]) =>
-  pluginBootstrapper(plugins, hesSettingsCenterApiFactory);
+  pluginBootstrapper(plugins, hesCConfApiFactory);
 
-export type Plugin = PluginType<HesSettingsCenterApi>;
+export type Plugin = PluginType<HesCConfApi>;

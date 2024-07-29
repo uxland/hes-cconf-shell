@@ -1,9 +1,11 @@
 import { selectableAdapterFactory as factory, regionAdapterRegistry } from "@uxland/regions";
-import { HesSettingsCenterShell } from "./UI/components/shell/shell";
+import { HesCConfShell } from "./UI/views/shell/shell";
+import { IHESCConfSection } from "./domain/model";
 
-export const initializeShell = async (element: HTMLElement) => {
+export const initializeShell = async (element: HTMLElement,configurationSections: IHESCConfSection[]) => {
   regionAdapterRegistry.registerAdapterFactory("content-switcher", factory);
-  const shell = new HesSettingsCenterShell();
+  const shell = new HesCConfShell();
+  shell.configurationSections = configurationSections;
   element.appendChild(shell as any);
 };
 

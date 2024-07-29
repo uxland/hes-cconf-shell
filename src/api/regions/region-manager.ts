@@ -3,14 +3,14 @@ import { PluginInfo } from "../plugin";
 import { IRegion } from "@uxland/regions";
 import { shellRegions } from "./regions";
 
-export interface HesSettingsCenterRegionManager extends HarmonixRegionManager {
+export interface HesCConfRegionManager extends HarmonixRegionManager {
   registerMenu(view: HarmonixViewDefinition): Promise<void>;
   registerQuickAction(view: HarmonixViewDefinition): Promise<void>;
   registerMainView(view: HarmonixViewDefinition, title: string): Promise<void>;
   activateMainView(viewId: string): Promise<void>;
 }
 
-class RegionManagerProxy implements HesSettingsCenterRegionManager {
+class RegionManagerProxy implements HesCConfRegionManager {
   constructor(
     private pluginInfo: PluginInfo,
     private regionManager: IRegionManager,
@@ -151,4 +151,4 @@ class RegionManagerProxy implements HesSettingsCenterRegionManager {
 export const createRegionManagerProxy = (
   pluginInfo: PluginInfo,
   regionManager: IRegionManager,
-): HesSettingsCenterRegionManager => new RegionManagerProxy(pluginInfo, regionManager);
+): HesCConfRegionManager => new RegionManagerProxy(pluginInfo, regionManager);

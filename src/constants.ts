@@ -1,1 +1,5 @@
-export const hesSettingsCenterShellId = "hes-settings-center-shell";
+export const HesCConfShellId = "hes-cconf-shell";
+export const mainViews = {
+    dashboard: "dashboard",
+    section: "section",
+}

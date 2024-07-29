@@ -1,9 +1,9 @@
 import { bootstrapPlugins, PluginDefinition } from "@uxland/harmonix";
-import { IHESConfigurationItem } from "../../domain/model";
+import { IHESCConfSection } from "../../domain/model";
 import { getConfigurations } from "../get-configurations/get-configurations";
-import { hesSettingsCenterApiFactory } from "../../api/api";
+import { hesCConfApiFactory } from "../../api/api";
 
-const buildHarmonixPlugins = (configurations: IHESConfigurationItem[]) => { 
+const buildHarmonixPlugins = (configurations: IHESCConfSection[]) => { 
   const plugins = configurations
     .map((c) => c.plugins)
     .flat()
@@ -19,6 +19,6 @@ const buildHarmonixPlugins = (configurations: IHESConfigurationItem[]) => {
 export const runConfigurations = async () => {
   const configurations = await getConfigurations();
   const plugins = buildHarmonixPlugins(configurations) as PluginDefinition[];
-  await bootstrapPlugins(plugins, hesSettingsCenterApiFactory);
+  await bootstrapPlugins(plugins, hesCConfApiFactory);
   return configurations;
 };
