@@ -3,7 +3,7 @@ import { customElement, property } from "lit/decorators.js";
 import styles from "./styles.css?inline";
 import { template } from "./template";
 import { IHESCConfSection } from "../../../domain/model";
-import { HesCConfRegionHost } from "../../../api/api";
+import { HesCConfRegionHost, shellApi } from "../../../api/api";
 import { IRegion, region } from "@uxland/regions";
 import { shellRegions } from "../../../api/regions/regions";
 
@@ -43,6 +43,7 @@ export class HesCConfSection extends HesCConfRegionHost(LitElement) {
 
   _selectConfiguration(pluginId: string) {
     this.selectedPlugin = pluginId;
-    this.pluginMainRegion?.activate(pluginId);
+    shellApi.regionManager.activateMainView(pluginId);
+    //this.pluginMainRegion?.activate(pluginId);
   }
 }
