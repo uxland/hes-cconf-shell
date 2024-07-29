@@ -11,7 +11,7 @@ ${props.section ? html `<div class="container">
         <div class="section-title">${props.section.name}</div>
         <div class="section-configurations">${repeat(props.section.plugins, (p: IHESCConfPlugin) => html`<div class="configuration-item" ?selected=${p.pluginId === props.selectedPlugin} @click=${() => props._selectConfiguration(p.pluginId)}>${p.name}</div>`) }</div>
       </div>
-      <div id="plugin-main-region-container"></div>
+      <content-switcher id="plugin-main-region-container"></content-switcher>
     </div>
 </div>` : nothing}
 `;

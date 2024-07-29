@@ -79,6 +79,6 @@ span.section-selected{
     background: var(--color-primary-50);
 }
 
-#plugin-main-container{
+#plugin-main-region-container{
     flex: 1;
 }
