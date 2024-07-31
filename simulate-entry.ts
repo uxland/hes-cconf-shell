@@ -1,5 +1,4 @@
 import { bootstrapPlugins, PluginDefinition } from "@uxland/harmonix";
-//import "reflect-metadata";
 import { hesCConfApiFactory } from "./src/api/api";
 import { IHESCConfSection } from "./src/domain/model";
 import { initializeShell } from "./src/initializer";

@@ -1,6 +1,4 @@
-//import "@salut/design-system-salut";
-//import "@salut/design-system-salut/css/main.css";
-import "../../dss.css";
+import "../../index.css";
 import { html } from "lit";
 import { HesCConfShell } from "./shell";
 import { mainViews } from "../../../constants";
