@@ -7,7 +7,8 @@ import { template } from "./template";
 import { shellRegions } from "../../../api/regions/regions";
 import { IHESCConfSection } from "../../../domain/model";
 import { mainViews} from '../../../constants';
-import { filterByCategory } from "../../../domain/filter-configurations-by-category";
+import { filterConfigurationsByCategory } from "../../../domain/filter-configurations-by-category";
+import { searchConfigurations } from "../../../domain/search-configurations";
 
 //@ts-ignore
 @customElement("hes-cconf-shell")
@@ -46,7 +47,11 @@ export class HesCConfShell extends HesCConfRegionHost(LitElement) {
   }
 
   _selectCategory(category: string) {
-    this.filteredConfigurationSections = filterByCategory(category, this.configurationSections);
+    this.filteredConfigurationSections = filterConfigurationsByCategory(category, this.configurationSections);
+  }
+
+  _searchConfiguration(searchString: string) {
+    this.filteredConfigurationSections = searchConfigurations(searchString, this.configurationSections);
   }
 
   _backToDashboard() {

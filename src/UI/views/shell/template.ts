@@ -27,7 +27,7 @@ export const template = (props: HesCConfShell) => html`
       <div id="quick-actions-region-container"></div>
     </div>
       <content-switcher class="content" attrForSelected="name" .selected=${props.selectedView}>
-        <hes-cconf-dashboard name=${mainViews.dashboard} .configurationSections=${props.filteredConfigurationSections} @section-selected=${(e)=>props._selectSection(e.detail)} @category-selected=${(e)=>props._selectCategory(e.detail)}></hes-cconf-dashboard>
+        <hes-cconf-dashboard name=${mainViews.dashboard} .configurationSections=${props.filteredConfigurationSections} @section-selected=${(e)=>props._selectSection(e.detail)} @category-selected=${(e)=>props._selectCategory(e.detail)} @configuration-searched=${(e)=>props._searchConfiguration(e.detail)}></hes-cconf-dashboard>
         <hes-cconf-section name=${mainViews.section} .section=${props.selectedSection} @back-to-dashboard=${() => props._backToDashboard()}></hes-cconf-section>
       </content-switcher>
   </div>

@@ -8,6 +8,7 @@ export const template = (props: HesCConfDashboard) => html`
     <button class="tab selected" @click=${(e)=>props._selectConfigurations("user", e.currentTarget)}>Usuari</button>
     <button class="tab" @click=${(e)=>props._selectConfigurations("admin", e.currentTarget)}>Administrador</button>
   </div>
+  <input id="search-input" @input=${(e)=>props._searchConfiguration(e)} type="search" placeholder="Escriu per cercar una configuració">
   <div class="container">
 
     ${props.configurationSections?.length && repeat(

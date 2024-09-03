@@ -1,6 +1,6 @@
 import { IHESCConfSection } from "./model";
 
-export function filterByCategory(category: string, data: IHESCConfSection[]) {
+export function filterConfigurationsByCategory(category: string, data: IHESCConfSection[]) {
   return data
     .map((group) => {
       // Filtrar plugins que contienen la categoría especificada

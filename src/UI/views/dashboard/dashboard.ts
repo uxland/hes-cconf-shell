@@ -1,4 +1,4 @@
-import { LitElement, PropertyValues, css, html, unsafeCSS } from "lit";
+import { LitElement, css, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import styles from "./styles.css?inline";
 import { template } from "./template";
@@ -35,5 +35,13 @@ export class HesCConfDashboard extends LitElement {
       detail: category,
     });
     this.dispatchEvent(event);
+  }
+
+  _searchConfiguration(event: Event) {
+    const target = event.target as HTMLInputElement;
+    const customEvent = new CustomEvent("configuration-searched", {
+      detail: target.value,
+    });
+    this.dispatchEvent(customEvent);
   }
 }
