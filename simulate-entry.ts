@@ -36,11 +36,13 @@ export const fetchConfigurations = () => {
                     pluginId: "patient-notifications",
                     pluginUrl: "",
                     name: "Notificacions del pacient",
+                    category: ["user"]
                 },
                 {
                     pluginId: "professional-notifications",
                     pluginUrl: "",
-                    name: "Notificacions del professional",
+                  name: "Notificacions del professional",
+                    category: ["user", "admin"]
                 },
             ],
         },
@@ -55,6 +57,7 @@ export const fetchConfigurations = () => {
                     pluginId: "user-administrative-data",
                     pluginUrl: "",
                     name: "Dades administratives de l'usuari",
+                    category: ["admin"]
                 },
             ],
         },

@@ -1,4 +1,4 @@
-import { LitElement, css, html, unsafeCSS } from "lit";
+import { LitElement, PropertyValues, css, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import styles from "./styles.css?inline";
 import { template } from "./template";
@@ -21,6 +21,18 @@ export class HesCConfDashboard extends LitElement {
   _selectSection(sectionId: string) {
     const event = new CustomEvent("section-selected", {
       detail: sectionId,
+    });
+    this.dispatchEvent(event);
+  }
+
+  _selectConfigurations(category: string, element: HTMLElement) {
+    this.shadowRoot.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('selected');
+      });
+
+    element.classList.add('selected');
+    const event = new CustomEvent("category-selected", {
+      detail: category,
     });
     this.dispatchEvent(event);
   }

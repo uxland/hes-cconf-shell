@@ -2,6 +2,7 @@ export interface IHESCConfPlugin{
     pluginId: string;
     pluginUrl: string;
     name: string;
+    category: string[]
 }
 
 export interface IHESCConfSection{

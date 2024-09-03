@@ -1,5 +1,5 @@
 import { IRegion, region } from "@uxland/regions";
-import { LitElement, css, html, unsafeCSS } from "lit";
+import { LitElement, PropertyValues, css, html, unsafeCSS } from "lit";
 import { HesCConfRegionHost } from "../../../api/api";
 import { customElement, property } from "lit/decorators.js";
 import styles from "./styles.css?inline";
@@ -7,6 +7,7 @@ import { template } from "./template";
 import { shellRegions } from "../../../api/regions/regions";
 import { IHESCConfSection } from "../../../domain/model";
 import { mainViews} from '../../../constants';
+import { filterByCategory } from "../../../domain/filter-configurations-by-category";
 
 //@ts-ignore
 @customElement("hes-cconf-shell")
@@ -19,8 +20,16 @@ export class HesCConfShell extends HesCConfRegionHost(LitElement) {
     ${unsafeCSS(styles)}
   `;
 
+  protected firstUpdated(_changedProperties: PropertyValues): void {
+    super.firstUpdated(_changedProperties);
+    this._selectCategory("user");
+  }
+
   @property()
   configurationSections: IHESCConfSection[];
+
+  @property()
+  filteredConfigurationSections: IHESCConfSection[];
 
   @property()
   selectedView = mainViews.dashboard;
@@ -33,7 +42,11 @@ export class HesCConfShell extends HesCConfRegionHost(LitElement) {
 
   _selectSection(sectionId: string) {
     this.selectedView = mainViews.section;
-    this.selectedSection = this.configurationSections?.find((c) => c.id === sectionId) as any;
+    this.selectedSection = this.filteredConfigurationSections?.find((c) => c.id === sectionId) as any;
+  }
+
+  _selectCategory(category: string) {
+    this.filteredConfigurationSections = filterByCategory(category, this.configurationSections);
   }
 
   _backToDashboard() {

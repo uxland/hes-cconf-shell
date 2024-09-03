@@ -7,6 +7,8 @@ import '../section/section';
 import '../../components/content-switcher/content-switcher';
 import salutLogo from "../../images/Salut_Logotip.svg";
 import gencatLogo from "../../images/Gencat_Logotip.svg";
+import "@salut/design-system-salut";
+import "@salut/design-system-salut/css/main.css";
 
 export const template = (props: HesCConfShell) => html`
 <div class="container">
@@ -25,7 +27,7 @@ export const template = (props: HesCConfShell) => html`
       <div id="quick-actions-region-container"></div>
     </div>
       <content-switcher class="content" attrForSelected="name" .selected=${props.selectedView}>
-        <hes-cconf-dashboard name=${mainViews.dashboard} .configurationSections=${props.configurationSections} @section-selected=${(e)=>props._selectSection(e.detail)}></hes-cconf-dashboard>
+        <hes-cconf-dashboard name=${mainViews.dashboard} .configurationSections=${props.filteredConfigurationSections} @section-selected=${(e)=>props._selectSection(e.detail)} @category-selected=${(e)=>props._selectCategory(e.detail)}></hes-cconf-dashboard>
         <hes-cconf-section name=${mainViews.section} .section=${props.selectedSection} @back-to-dashboard=${() => props._backToDashboard()}></hes-cconf-section>
       </content-switcher>
   </div>
