@@ -7,8 +7,6 @@ import '../section/section';
 import '../../components/content-switcher/content-switcher';
 import salutLogo from "../../images/Salut_Logotip.svg";
 import gencatLogo from "../../images/Gencat_Logotip.svg";
-import "@salut/design-system-salut";
-import "@salut/design-system-salut/css/main.css";
 
 export const template = (props: HesCConfShell) => html`
 <div class="container">

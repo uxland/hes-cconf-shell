@@ -25,8 +25,7 @@
     "tslib": "^2.7.0",
     "@uxland/harmonix": "^1.0.0",
     "@uxland/regions": "^1.0.0",
-    "@uxland/localization": "^1.0.3",
-    "@salut/design-system-salut": "https://hudson.intranet.gencat.cat/nexus/repository/public-npm-repositories/%40salut/design-system-salut/-/design-system-salut-1.6.0.tgz"
+    "@uxland/localization": "^1.0.3"
   },
   "devDependencies": {
     "typescript": "^5.2.2",
