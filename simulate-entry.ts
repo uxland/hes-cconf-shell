@@ -1,6 +1,6 @@
 import { bootstrapPlugins, PluginDefinition } from "@uxland/harmonix";
 import { hesCConfApiFactory } from "./src/api/api";
-import { IHESCConfSection } from "./src/domain/model";
+import { IHESCConfSection, THESCConfCategory } from "./src/domain/model";
 import { initializeShell } from "./src/initializer";
 
 const buildHarmonixPlugins = (configurationSections: IHESCConfSection[]) => { 
@@ -36,13 +36,13 @@ export const fetchConfigurations = () => {
                     pluginId: "patient-notifications",
                     pluginUrl: "",
                     name: "Notificacions del pacient",
-                    category: ["user"]
+                    category: ["user"] as THESCConfCategory[]
                 },
                 {
                     pluginId: "professional-notifications",
                     pluginUrl: "",
                   name: "Notificacions del professional",
-                    category: ["user", "admin"]
+                    category: ["user", "admin"] as THESCConfCategory[]
                 },
             ],
         },
@@ -51,13 +51,13 @@ export const fetchConfigurations = () => {
             name: "Gestió d'usuari",
             description: "Configuració de les teves dades i connexions",
             icon: "user",
-            tags: ["user", "configurations"],
+            tags: ["user", "configurations"] as THESCConfCategory[],
             plugins: [
                 {
                     pluginId: "user-administrative-data",
                     pluginUrl: "",
                     name: "Dades administratives de l'usuari",
-                    category: ["admin"]
+                    category: ["admin"] as THESCConfCategory[],
                 },
             ],
         },

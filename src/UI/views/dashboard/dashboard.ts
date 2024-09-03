@@ -2,7 +2,7 @@ import { LitElement, css, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import styles from "./styles.css?inline";
 import { template } from "./template";
-import { IHESCConfSection } from "../../../domain/model";
+import { IHESCConfSection, THESCConfCategory } from "../../../domain/model";
 
 //@ts-ignore
 @customElement("hes-cconf-dashboard")
@@ -25,7 +25,7 @@ export class HesCConfDashboard extends LitElement {
     this.dispatchEvent(event);
   }
 
-  _selectConfigurations(category: string, element: HTMLElement) {
+  _selectConfigurations(category: THESCConfCategory, element: HTMLElement) {
     (this as any).shadowRoot.querySelectorAll('.tab').forEach(tab => {
         tab.classList.remove('selected');
       });

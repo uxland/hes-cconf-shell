@@ -12,6 +12,5 @@ export interface IHESCConfSection{
     name: string;
     description: string;
     icon: string;
-    tags: string[];
     plugins: IHESCConfPlugin[];
 }
