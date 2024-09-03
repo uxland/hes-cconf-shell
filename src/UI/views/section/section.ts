@@ -4,7 +4,7 @@ import styles from "./styles.css?inline";
 import { template } from "./template";
 import { IHESCConfSection } from "../../../domain/model";
 import { HesCConfRegionHost, shellApi } from "../../../api/api";
-import { IRegion, region } from "@uxland/regions";
+import { IRegion, region, regionView } from "@uxland/regions";
 import { shellRegions } from "../../../api/regions/regions";
 
 //@ts-ignore
@@ -27,14 +27,17 @@ export class HesCConfSection extends HesCConfRegionHost(LitElement) {
   @region({ targetId: "plugin-main-region-container", name: shellRegions.pluginMain })
   pluginMainRegion: IRegion | undefined;
 
+
   updated(_changedProps: PropertyValues) {
     super.updated(_changedProps);
-    setTimeout(() => {
-      const firstPlugin = this.section?.plugins[0];
-    if (firstPlugin) {
-      this._selectConfiguration(firstPlugin.pluginId);
+    if (_changedProps.has("section") && this.section) {
+      setTimeout(() => {
+        const firstPlugin = this.section?.plugins[0];
+      if (firstPlugin) {
+        this._selectConfiguration(firstPlugin.pluginId);
+      }
+      }, 500);
     }
-    }, 500);
   }
   
   _backToDashboard() {
