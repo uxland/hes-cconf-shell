@@ -1,8 +1,10 @@
+export type THESCConfCategory = "user" | "admin";
+
 export interface IHESCConfPlugin{
     pluginId: string;
     pluginUrl: string;
     name: string;
-    category: string[]
+    category: THESCConfCategory[]
 }
 
 export interface IHESCConfSection{

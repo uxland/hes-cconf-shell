@@ -5,7 +5,7 @@ import { customElement, property } from "lit/decorators.js";
 import styles from "./styles.css?inline";
 import { template } from "./template";
 import { shellRegions } from "../../../api/regions/regions";
-import { IHESCConfSection } from "../../../domain/model";
+import { IHESCConfSection, THESCConfCategory } from "../../../domain/model";
 import { mainViews} from '../../../constants';
 import { filterConfigurationsByCategory } from "../../../domain/filter-configurations-by-category";
 import { searchConfigurations } from "../../../domain/search-configurations";
@@ -46,7 +46,7 @@ export class HesCConfShell extends HesCConfRegionHost(LitElement) {
     this.selectedSection = this.filteredConfigurationSections?.find((c) => c.id === sectionId) as any;
   }
 
-  _selectCategory(category: string) {
+  _selectCategory(category: THESCConfCategory) {
     this.filteredConfigurationSections = filterConfigurationsByCategory(category, this.configurationSections);
   }
 

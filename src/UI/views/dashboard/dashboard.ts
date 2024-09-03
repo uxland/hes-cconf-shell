@@ -26,7 +26,7 @@ export class HesCConfDashboard extends LitElement {
   }
 
   _selectConfigurations(category: string, element: HTMLElement) {
-    this.shadowRoot.querySelectorAll('.tab').forEach(tab => {
+    (this as any).shadowRoot.querySelectorAll('.tab').forEach(tab => {
         tab.classList.remove('selected');
       });
 
